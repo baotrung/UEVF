@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta charset="UTF-8"/>
+        <title>
+            {% block title %}Welcome!{% endblock %}
+        </title>
+        {% stylesheets
+            filter = "scssphp" output="css/base.css"
+            "@bootstrap_css"
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     </head>
     <body>
         {% block body %}{% endblock %}
+        {% javascripts filter="?jsqueeze" output="js/base.js"
+            "@jquery"
+            "@tether"
+            "@bootstrap_js"
+        %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -68,3 +68,22 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+assetic:
+    filters:
+        jsqueeze: ~
+        scssphp:
+            formatter: 'Leafo\ScssPhp\Formatter\Compressed'
+    assets:
+        bootstrap_css:
+            inputs:
+                - '%kernel.project_dir%/web/assets/inc/bootstrap/css/bootstrap.min.css'
+        jquery:
+            inputs:
+                - '%kernel.project_dir%/web/assets/inc/jquery/jquery-3.2.1.min.js'
+        tether:
+            inputs:
+                - '%kernel.project_dir%/web/assets/inc/tether/dist/js/tether.min.js'
+        bootstrap_js:
+            inputs:
+                - '%kernel.project_dir%/web/assets/inc/bootstrap/js/bootstrap.min.js'
