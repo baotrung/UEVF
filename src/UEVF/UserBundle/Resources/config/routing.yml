@@ -1,0 +1,10 @@
+uevf_user_homepage:
+    path:     /
+    defaults: { _controller: UEVFUserBundle:Default:index }
+
+uevf_user_createdump:
+    path:     /createdump
+    defaults: { _controller: UEVFUserBundle:Default:createDump }
+
+uevf_user_login:
+    path:     /login

@@ -1,3 +1,7 @@
+uevf_user:
+    resource: "@UEVFUserBundle/Resources/config/routing.yml"
+    prefix:   /user/
+
 uevf_core:
     resource: "@UEVFCoreBundle/Resources/config/routing.yml"
     prefix:   /
